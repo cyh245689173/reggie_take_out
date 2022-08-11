@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ import javax.swing.*;
 @ServletComponentScan
 @SpringBootApplication
 @EnableTransactionManagement //开启对事物管理的支持
+@EnableCaching//开启SpringCache注解方式实现缓存功能
 public class ReggieApplication {
     public static void main(String[] args) {
         SpringApplication.run(ReggieApplication.class,args);
