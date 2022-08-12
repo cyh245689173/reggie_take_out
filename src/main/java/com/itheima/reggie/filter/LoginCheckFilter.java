@@ -45,7 +45,11 @@ public class LoginCheckFilter implements Filter {
                 "/front/**",
                 "/common/**",
                 "/user/sendMsg",
-                "/user/login"
+                "/user/login",
+                "/doc.html",
+                "/webjars/**",
+                "/swagger-resources",
+                "/v2/api-docs"
         };
 
 //        2. 判断本次请求, 是否需要登录, 才可以访问
@@ -74,7 +78,7 @@ public class LoginCheckFilter implements Filter {
         if (request.getSession().getAttribute("user") != null) {
             log.info("用户已登录，用户id为：{}", request.getSession().getAttribute("user"));
 
-            Long userId= (Long) request.getSession().getAttribute("user");
+            Long userId = (Long) request.getSession().getAttribute("user");
 
             BaseContext.setCurrentId(userId);
 
